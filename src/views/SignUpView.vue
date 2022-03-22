@@ -51,12 +51,12 @@ export default {
   },
   methods: {
     async createUser() {
-      const { data: user, error } = await this.$supabase.auth.api.createUser({
+      const { data: user, error } = await this.$supabase.auth.signUp({
         email: this.email,
         password: this.password,
       });
       if (user) {
-        console.log(has_user);
+        console.log(user);
       }
       else if (error) {
         console.log(error);
